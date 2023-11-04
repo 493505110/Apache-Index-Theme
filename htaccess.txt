@@ -1,0 +1,105 @@
+Options +Indexes
+
+<IfModule mod_autoindex.c>
+
+  # Ignore listing of the listing directory
+  IndexIgnore "/theme"
+
+  # Indexing options
+  IndexOptions +AddAltClass +Charset=UTF-8 +FancyIndexing +FoldersFirst +HTMLTable
+  IndexOptions +IgnoreCase +NameWidth=* +SuppressRules +SuppressDescription +IconsAreLinks
+
+  # Some meta tags to add to the head tag
+  IndexHeadInsert "<meta name='viewport' content='width=device-width, initial-scale=1'><meta http-equiv='X-UA-Compatible' content='IE=edge'>"
+
+  HeaderName "/theme/header.html"
+  ReadmeName "/theme/footer.html"
+  IndexStyleSheet "/theme/table-automode.css"
+
+
+  # Registering icons
+  # Default icon
+  DefaultIcon "/theme/icons/application-x-zerosize.svg"
+
+  # Some generic icons
+  AddIcon "/theme/icons/blank.svg" ^^BLANKICON^^
+  AddIcon "/theme/icons/folder.svg" ^^DIRECTORY^^
+  AddIcon "/theme/icons/go-parent-folder.svg" ..
+
+  # Extension specific icons
+
+  # Archive
+  AddIcon "/theme/icons/application-zip.svg" .zip
+  AddIcon "/theme/icons/application-x-tar.svg" .tar .tar.xz
+  AddIcon "/theme/icons/application-x-gzip.svg" .gz
+  AddIcon "/theme/icons/application-x-compressed-tar.svg" .tar.gz
+  AddIcon "/theme/icons/application-x-bzip.svg" .bz2
+  AddIcon "/theme/icons/application-x-rar.svg" .rar
+  AddIcon "/theme/icons/application-x-java-archive.svg" .jar
+  AddIcon "/theme/icons/package-x-generic.svg" .7z .cab .pkg .rpm .deb
+
+  # Audio
+  AddIcon "/theme/icons/audio-x-mpeg.svg" .mp2 .mp3 .m4a
+  AddIcon "/theme/icons/audio-x-wav.svg" .wav
+  AddIcon "/theme/icons/audio-x-flac.svg" .flac
+  AddIcon "/theme/icons/audio-midi.svg" .mid .midi
+  AddIcon "/theme/icons/application-ogg.svg" .ogg
+  AddIcon "/theme/icons/application-x-audacity-project.svg" .au
+  AddIcon "/theme/icons/audio-x-generic.svg" .aac .aif .aifc .aiff .ape .iff .mpa .ra .wma .f4a .f4b .oga .xm .it .s3m .mod
+
+  # Office
+  AddIcon "/theme/icons/application-msword.svg" .doc .docx .docm .dot .dotx .dotm .msg .odt .pages .rtf .tex .wpd .wps
+  AddIcon "/theme/icons/application-vnd.ms-excel.addin.macroenabled.12.svg" .xlsx .xlsm .xltx .xltm .xlam .xlr .xls .csv
+  AddIcon "/theme/icons/application-vnd.ms-powerpoint.addin.macroenabled.12.svg" .ppt .pptx .pot .potx .pptm .potm .xps
+  
+  # Image
+  AddIcon "/theme/icons/image-jpg.svg" .jpg .jpeg .jpe
+  AddIcon "/theme/icons/image-bmp.svg" .bmp
+  AddIcon "/theme/icons/image-gif.svg" .gif
+  AddIcon "/theme/icons/image-x-ico.svg" .ico
+  AddIcon "/theme/icons/image-x-psd.svg" .psd
+  AddIcon "/theme/icons/image-png.svg" .tiff .tif .ai .webp
+
+  # Text
+  AddIcon "/theme/icons/text-x-generic.svg" .txt .log
+  AddIcon "/theme/icons/text-x-csrc.svg" .c
+  AddIcon "/theme/icons/text-x-chdr.svg" .h
+  AddIcon "/theme/icons/text-x-c++src.svg" .cpp .c++
+  AddIcon "/theme/icons/text-x-c++hdr.svg" .hpp .h++
+  AddIcon "/theme/icons/text-css.svg" .css .sass .scss .less
+  AddIcon "/theme/icons/application-x-font-ttf.svg" .ttf .TTF .woff .WOFF .woff2 .WOFF2
+  AddIcon "/theme/icons/application-x-font-otf.svg" .otf .OTF
+  AddIcon "/theme/icons/text-html.svg" .html .xhtml .shtml .htm .URL .url
+  AddIcon "/theme/icons/text-x-texinfo.svg" .nfo .info
+  AddIcon "/theme/icons/application-x-java.svg" .java
+  AddIcon "/theme/icons/text-xml.svg" .xml
+  AddIcon "/theme/icons/application-x-javascript.svg" .js .json
+  AddIcon "/theme/icons/text-x-markdown.svg" .md
+  AddIcon "/theme/icons/text-x-python.svg" .py
+  AddIcon "/theme/icons/application-x-php.svg" .php .phtml
+  AddIcon "/theme/icons/text-x-script.svg" .bat .BAT .cmd .sh .ps
+  AddIcon "/theme/icons/application-x-ruby.svg" .rb
+  AddIcon "/theme/icons/application-vnd.oasis.opendocument.database.svg" .sql
+  AddIcon "/theme/icons/x-office-drawing.svg" .svg .svgz
+  AddIcon "/theme/icons/text-x-generic.svg" .txt .cnf .conf .map .yaml
+
+  # Video
+  AddIcon "/theme/icons/video-x-wmv.svg" .wmv
+  AddIcon "/theme/icons/video-webm.svg" .webm
+  AddIcon "/theme/icons/application-x-shockwave-flash.svg" .flv .f4v .swf .f4p
+  AddIcon "/theme/icons/video-mp4.svg" .mp4 .mpg
+  AddIcon "/theme/icons/video-x-generic.svg" .asf .asx .mkv .mov .rm .srt .swf .vob .ogv
+
+  # Others
+  AddIcon "/theme/icons/application-x-cd-image.svg" .iso .img
+  AddIcon "/theme/icons/text-x-hex.svg" .bin .hex
+  AddIcon "/theme/icons/application-pdf.svg" .pdf
+  AddIcon "/theme/icons/application-x-ms-dos-executable.svg" .exe .EXE .msi .MSI
+
+  # Icons based on their type
+  AddIconByType (TXT,/theme/icons/text-x-generic.svg) text/*
+  AddIconByType (IMG,/theme/icons/image-png.svg) image/*
+  AddIconByType (SND,/theme/icons/audio-x-generic.svg) audio/*
+  AddIconByType (VID,/theme/icons/video-x-generic.svg) video/*
+
+</IfModule>
